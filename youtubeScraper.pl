@@ -3,7 +3,7 @@
 # needed to pull from the web
 use LWP::Simple;
 
-$fileOut = "test.txt";
+$fileOut = $ARGV[0];
 
 # gets googleapi key, from keyFile.txt in current dir
 my $keyFile = "keyFile.txt";
@@ -33,9 +33,26 @@ sub getContent{
 	my $content = (get $url);
 	die "Couldn't get $url" unless defined $content;
 	
+	my @contentArr = split /\n/, $content;
+
 	# write to fileOut
 	open (my $fhOut, '>>', $fileOut) or die "file open error";
-		print $fhOut "$content\n";
+	foreach my $row (@contentArr){
+		chomp $row;
+
+		if ($row =~ /"title": "(.*)"/){
+			print $fhOut "*****\n";
+			print $fhOut "T: $1\n";}
+
+		elsif ($row =~ /"description": "(.*)"/){
+			print $fhOut "D: $1\n";}
+
+		elsif ($row =~ /"channelTitle": "(.*)"/){
+			print $fhOut "U: $1\n";}
+
+		elsif ($row =~ /"videoId": "(.*)"/){
+			print $fhOut "L: http://youtube.com/watch?v=$1\n";}
+        }
 	close $fhOut;
 
 	# get more pages if nextPageToken exists
