@@ -17,7 +17,17 @@ close $fh;
 
 # channels/playlists
 my @playlists = (
-	'UUFKzRzwT28NDxFfxuq1vEmQ',	#DiscoDog Channel
+  'UUFKzRzwT28NDxFfxuq1vEmQ',		# DiscoDog Channel
+  'UUCiCH4bjwNnxKTy0KmdpXBQ', 		# HeyBuddays
+  'UU_JW3s3GEoNIc9bBUnrU8iw', 		# ronandfriendz
+  'PLAtxWiJjc0k1yAsHZAd6FWG7MIsrjMQRI', # thebobwhookidsamshow R&F playlist
+  'UUDcDSFLXLeC4zwxfsndzLcw', 		# kirkangel
+  'PLzKDH2c8Gah0zRGEKQHdzX-3e5SJh0QG0', # Frrrrrrrrunkis R&F playlist
+  'UUwTMLRqNN1wOMR8A8gyaLvA', 		# ronscigarBJJ
+  'UUNX19MqeH747Rkod6YcjIQw', 		# CK Andersno
+  'UUVQyFlFQxuRmI1uw4fCVqfg', 		# ronandfezfans
+  'PL8h2eiL0gjh88jO5Dkw6gU_eLdK07sJxa', # neil rogers R&R playlist
+  'PLl2sPEno7jw8Uz4X0H-41k3NmSnGAYxGy', # s1nberg R&R playlist
 );
 
 # for each playlist, get data and do it recursively via subs below
