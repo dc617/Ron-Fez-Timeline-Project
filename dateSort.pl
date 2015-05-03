@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-system(">test.txt");
-
 #command line $perl dateSort.pl fileToBeSorted fileToBeWritten
 $fileIn = $ARGV[0];
 $fileOut = $ARGV[1];
